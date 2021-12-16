@@ -2,9 +2,10 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   actions: {
-    readVaga(vaga) {
-      let e = this.model.findBy('id', vaga.id);
-      alert(e.get('cargo') + ' ' + e.get('id'));
+    lerEmpresa(vaga) {
+
+      this.transitionToRoute('empresa-vaga', vaga.id);
+
     },
     destroyVaga(vaga) {
       let confirmado = window.confirm(

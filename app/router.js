@@ -29,4 +29,5 @@ Router.map(function () {
   this.route('candidato-uf', { path: 'candidato/uf/:uf' });
   this.route('experiencia');
   this.route('experiencia-candidato', { path: 'candidato/experiencia/:id' });
+  this.route('empresa-vaga', { path: 'empresa-vaga/:id' });
 });
