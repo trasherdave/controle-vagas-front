@@ -1,0 +1,38 @@
+{{page-title "ExperienciaCandidato"}}
+
+<div style="width:90%;margin:auto;margin-top:50px">
+
+<h4>Experiência do Candidato: {{this.model.nomeCompleto}}</h4>
+
+
+<table class="table">
+<thead class="thead-light">
+<tr>
+<th scope="col"></th>
+<th scope="col">Empresa</th>
+<th scope="col">Cargo</th>
+<th scope="col">Tarefas Executadas</th>
+<th scope="col">Forma Contratação</th>
+<th scope="col">Data Início</th>
+<th scope="col">Data Conclusão</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<th scope="row"></th>
+<td>{{this.model.empresa}}</td>
+<td>{{this.model.cargo}}</td>
+<td>{{this.model.tarefasExecutadas}}</td>
+<td>{{this.model.formaContratacao}}</td>
+<td>{{this.model.dataInicio}}</td>
+<td>{{this.model.dataConclusao}}</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+
+
+{{outlet}}

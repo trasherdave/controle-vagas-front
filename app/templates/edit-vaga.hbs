@@ -1,0 +1,72 @@
+{{page-title "EditVaga"}}
+
+<div style="width:70%;margin:auto;margin-top:50px">
+
+<h2>Formulário da Vaga</h2>
+
+<form style="margin-top:50px">
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Código</label>
+ {{input type="text" readonly="true"  class="form-control" value=model.id }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Cargo</label>
+ {{input type="text"  class="form-control" value=model.cargo }}
+</div>
+
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Especificação Cargo</label>
+ {{textarea class="form-control" value=model.especificCargo }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Remuneração</label>
+ {{input type="number" class="form-control" value=model.remuneracao }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Vale Transporte</label>
+ {{input type="text"   class="form-control" value=model.valeTransporte }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Vale Refeição</label>
+ {{input type="text"   class="form-control" value=model.valeRefeicao }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Turno</label>
+ {{input type="text"  class="form-control" value=model.turno }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Forma Contratação</label>
+ {{input type="text"   class="form-control" value=model.formaContratacao }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Estado</label>
+ {{input type="text"   class="form-control" value=model.uf }}
+</div>
+
+
+<!-- Submit button -->
+
+<button class="btn btn-primary d-grid gap-1 col-3 mx-auto" {{action 'editVaga' model}} type="submit" >Atualizar</button>
+</form>
+
+</div>
+
+{{outlet}}

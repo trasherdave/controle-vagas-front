@@ -1,0 +1,177 @@
+{{page-title "FormCandidato"}}
+<div style="width:70%;margin:auto;margin-top:50px" >
+
+<h2>Formulário do Candidato</h2>
+
+<form style="margin-top:50px" >
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Login</label>
+ {{input type="text"  class="form-control" value=this.login }}
+</div>
+
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Senha</label>
+ {{input type="password"  name="nome1" class="form-control" value=this.senha }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Nome</label>
+ {{input type="text" class="form-control" value=this.nomeCompleto }}
+</div>
+
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >CPF</label>
+ {{input type="text"   class="form-control" value=this.cpf }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Data de Nascimento</label>
+ {{input type="date"  class="form-control" value=this.dataNascimento }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Sexo</label>
+<select class="form-control" onchange={{action "selectSexo" value="target.value"}}>
+     <option value="">Selecionar</option>
+         <option value="M">Masculino</option>
+         <option value="F">Feminino</option>
+   </select>
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Cidade</label>
+ {{input type="text"   class="form-control" value=this.cidade }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Estado</label>
+<select class="form-control" onchange={{action "selectEstado" value="target.value"}}>
+    <option value="">Selecionar</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+  </select>
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >CEP</label>
+ {{input type="text"   class="form-control" value=this.cep }}
+</div>
+
+
+<!-- Email input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Email</label>
+ {{input type="email"  class="form-control" value=this.email }}
+</div>
+
+<!-- Number input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Telefone</label>
+ {{input type="number"  class="form-control" value=this.telefone }}
+</div>
+
+<div id="experiencias">
+
+<hr />
+
+<h4>Experiência</h4>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Nome Empresa</label>
+ {{input type="text"  class="form-control" value=this.empresa }}
+ </div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Cargo</label>
+{{input type="text"  class="form-control" value=this.cargo }}
+</div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Forma Contratação</label>
+  <select class="form-control" onchange={{action "selectContratacao" value="target.value"}}>
+     <option value="">Selecionar</option>
+         <option value="CLT">CLT</option>
+         <option value="PJ">PJ</option>
+         <option value="Temporário">Temporário</option>
+         <option value="Estágio">Estágio</option>
+   </select>
+</div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Tarefas Executadas</label>
+{{input type="text"  class="form-control" value=this.tarefasExecutadas }}
+</div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Data Início</label>
+{{input type="date"  class="form-control" value=this.dataInicio }}
+</div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Data Conclusão</label>
+{{input type="date"  class="form-control" value=this.dataConclusao }}
+</div>
+
+</div>
+
+<button class="btn btn-success d-grid gap-1 col-3 mx-auto" style="margin-bottom:10px;" type="button" id="btnExperiencia" onclick="adicionarExperiencia()" >+ Experiência</button>
+
+<!-- Submit button -->
+
+<button class="btn btn-primary d-grid gap-1 col-3 mx-auto" type="submit" {{action 'createCandidato'}} >Cadastrar</button>
+</form>
+
+</div>
+
+<script>
+
+document.getElementById('experiencias').style.display = 'none';
+
+function adicionarExperiencia() {
+
+document.getElementById('experiencias').style.display = 'block';
+document.getElementById('btnExperiencia').style.visibility = 'hidden';
+
+}
+
+</script>
+
+{{outlet}}
+{{outlet 'modal'}}

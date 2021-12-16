@@ -1,0 +1,129 @@
+{{page-title "EditCandidato"}}
+
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+<div style="width:70%;margin:auto;margin-top:50px" >
+<h2>Formulário do Candidato</h2>
+
+<form style="margin-top:50px" >
+
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Código</label>
+ {{input type="text" readonly="true"  class="form-control" value=model.id }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Login</label>
+ {{input type="text"  class="form-control" value=model.login }}
+</div>
+
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Senha</label>
+ {{input type="password"  name="nome1" class="form-control" value=model.senha }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Nome</label>
+ {{input type="text" class="form-control" value=model.nomeCompleto }}
+</div>
+
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >CPF</label>
+ {{input type="text"   class="form-control" value=model.cpf }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Data de Nascimento</label>
+ {{input type="date"  class="form-control" value=model.dataNascimento }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Sexo</label>
+ {{input type="text"   class="form-control" value=model.sexo }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Cidade</label>
+ {{input type="text"   class="form-control" value=model.cidade }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Estado</label>
+ {{input type="text"   class="form-control" value=model.uf }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >CEP</label>
+ {{input type="text"   class="form-control" value=model.cep }}
+</div>
+
+
+<!-- Email input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Email</label>
+ {{input type="email"  class="form-control" value=model.email }}
+</div>
+
+<!-- Number input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Telefone</label>
+ {{input type="number"  class="form-control" value=model.telefone }}
+</div>
+
+<hr />
+
+<h4>Experiência</h4>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Nome Empresa</label>
+ {{input type="text"  class="form-control" value=model.empresa }}
+ </div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Cargo</label>
+{{input type="text"  class="form-control" value=model.cargo }}
+</div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Forma Contratação</label>
+ {{input type="text"  class="form-control" value=model.formaContratacao }}
+</div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Tarefas Executadas</label>
+{{textarea  class="form-control" value=model.tarefasExecutadas }}
+</div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Data Início</label>
+{{input type="date"  class="form-control" value=model.dataInicio }}
+</div>
+
+<div class="form-outline mb-4">
+<label class="form-label" >Data Conclusão</label>
+{{input type="date"  class="form-control" value=model.dataConclusao }}
+</div>
+
+<!-- Submit button -->
+
+<button class="btn btn-primary d-grid gap-1 col-3 mx-auto" {{action 'editCandidato' model}} type="submit" >Atualizar</button>
+</form>
+
+</div>
+
+
+
+{{outlet}}

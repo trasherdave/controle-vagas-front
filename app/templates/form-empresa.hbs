@@ -1,0 +1,115 @@
+{{page-title "FormEmpresa"}}
+
+<div style="width:70%;margin:auto;margin-top:50px">
+
+<h2>Formulário da Empresa</h2>
+
+<form style="margin-top:50px">
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Login</label>
+ {{input type="text"  class="form-control" value=this.login }}
+</div>
+
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Senha</label>
+ {{input type="password"  name="nome1" class="form-control" value=this.senha }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Nome</label>
+ {{input type="text" class="form-control" value=this.nome }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Razão Social</label>
+ {{input type="text"   class="form-control" value=this.razaoSocial }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >CNPJ</label>
+ {{input type="text"   class="form-control" placeholder="00.000.000/0000-00" value=this.cnpj }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Área de Atuação</label>
+ {{input type="text"  class="form-control" value=this.areaAtuacao }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Cidade</label>
+ {{input type="text"   class="form-control" value=this.cidade }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Estado</label>
+ <select class="form-control" onchange={{action "selectEstado" value="target.value"}}>
+    <option value="">Selecionar</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+  </select>
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >CEP</label>
+ {{input type="text"   class="form-control" value=this.cep }}
+</div>
+
+
+<!-- Email input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Email</label>
+ {{input type="email"  class="form-control" value=this.email }}
+</div>
+
+<!-- Number input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Telefone</label>
+ {{input type="number"  class="form-control" value=this.telefone }}
+</div>
+
+
+
+<!-- Submit button -->
+
+<button class="btn btn-primary d-grid gap-1 col-3 mx-auto" type="submit" {{action 'createBoardGame' empresa}} >Cadastrar</button>
+</form>
+
+</div>
+
+{{outlet}}

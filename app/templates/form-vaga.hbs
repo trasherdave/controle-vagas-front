@@ -1,0 +1,126 @@
+{{page-title "FormVaga"}}
+
+
+<div style="width:70%;margin:auto;margin-top:50px">
+
+<h2>Formulário da Vaga</h2>
+
+<form style="margin-top:50px">
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Cargo</label>
+ {{input type="text"  class="form-control" value=this.cargo }}
+</div>
+
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Especificação Cargo</label>
+ {{textarea class="form-control" rows="3" value=this.especificCargo }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Remuneração</label>
+ {{input type="number" class="form-control" value=this.remuneracao }}
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Vale Transporte</label>
+<select class="form-control" onchange={{action "selectValeTransporte" value="target.value"}}>
+     <option value="">Selecionar</option>
+         <option value="Sim">Sim</option>
+         <option value="Não">Não</option>
+   </select>
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Vale Refeição</label>
+ <select class="form-control" onchange={{action "selectValeRefeicao" value="target.value"}}>
+     <option value="">Selecionar</option>
+         <option value="Sim">Sim</option>
+         <option value="Não">Não</option>
+   </select>
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Turno</label>
+  <select class="form-control" onchange={{action "selectTurno" value="target.value"}}>
+     <option value="">Selecionar</option>
+         <option value="Matutino">Matutino</option>
+         <option value="Vespertino">Vespertino</option>
+         <option value="Integral">Integral</option>
+   </select>
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Forma Contratação</label>
+  <select class="form-control" onchange={{action "selectContratacao" value="target.value"}}>
+     <option value="">Selecionar</option>
+         <option value="CLT">CLT</option>
+         <option value="PJ">PJ</option>
+         <option value="Temporário">Temporário</option>
+         <option value="Estágio">Estágio</option>
+   </select>
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label" >Estado</label>
+ <select class="form-control" onchange={{action "selectEstado" value="target.value"}}>
+    <option value="">Selecionar</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+  </select>
+</div>
+
+<!-- Text input -->
+<div class="form-outline mb-4">
+<label class="form-label">Empresa</label>
+ <select class="form-control" onchange={{action "selectEmpresa" value="target.value"}}>
+   <option value="">Selecionar</option>
+  {{#each this.model as |empresa|}}
+   <option value="{{empresa.id}}">{{empresa.nome}}</option>
+  {{/each}}
+ </select>
+</div>
+
+
+<!-- Submit button -->
+
+<button class="btn btn-primary d-grid gap-1 col-3 mx-auto" type="submit" {{action 'createVaga'}} >Cadastrar</button>
+</form>
+
+</div>
+
+{{outlet}}
