@@ -1,4 +1,11 @@
-# empresa
+# controle-vagas-front
+
+Olá 😄 me chamo David Rodrigues, desenvolvi esse Sistema de Controle de Vagas usando <b>Ember JS</b> no front-end, na matéria de Novas Tecnologias em Desenvolvimento para Web, com o professor Marinaldo Oliveira Santos.
+
+As tecnologias usadas foram:
+Ember JS (front-end) - Java(back-end) - Spring Boot(back-end) - PostgreSQL(BD) - Bootstrap.
+
+#
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
